@@ -1,0 +1,58 @@
+import random
+print('Winning rules of the game ROCK PAPER SCISSORS are :\n'
+          + "Rock vs Paper -> Paper wins \n"
+          + "Rock vs Scissors -> Rock wins \n"
+          + "Paper vs Scissors -> Scissor wins \n")
+while True:
+        print("Enter your choice \n 1 - Rock \n 2 - Paper \n 3 - Scissors \n")
+        choice = int(input("Enter your choice : "))
+
+        while choice > 3 and choice < 1:
+            print("Enter a valid choice please...")
+
+        if choice == 1 :
+            user_choice = "Rock"
+        elif choice == 2:
+            user_choice = "Paper"
+        else:
+            user_choice = "Scissors"
+
+        #printing user's choice
+        print("User choice is : ", user_choice)
+        print("Now it's Computers Turn...")
+
+        choice_names = ["Rock","Paper","Scissors"]
+        comp_choice = random.choice(choice_names)
+
+
+        print(f"Computer choice is : {comp_choice}")
+        print(user_choice, "Vs", comp_choice)
+
+        #obtaining the result
+        if comp_choice == user_choice:
+            result = "It's Draw => It's a tie"
+
+        if (comp_choice == "Paper" and user_choice == "Rock"):
+            result = "Paper wins => Computer wins"
+        elif (comp_choice == "Paper" and user_choice == "Scissors"):
+            result = "Scissors wins => User wins"
+
+        if (comp_choice == "Rock" and user_choice == "Paper"):
+            result = "Paper wins => User wins"
+        elif (comp_choice == "Rock" and user_choice == "Scissors"):
+           result = "Rock wins => Computer wins "
+
+        if (comp_choice == "Scissors" and user_choice == "Paper"):
+            result = "Scissors wins => Computer wins"
+        elif (comp_choice == "Scissors" and user_choice == "Rock"):
+            result = "Rock win => User wins"
+
+        #Printing the result
+        print(result)
+        print("Do you want to play again..? (Y/N)")
+        answer = input().lower
+        if answer == "y":
+            continue
+        else:
+            break
+print("Thanks for Playing...*")
