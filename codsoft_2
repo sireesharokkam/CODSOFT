@@ -1,0 +1,51 @@
+def main():
+    print("Operations to be performed: ")
+    print("1.Adding")
+    print("2.Subtraction")
+    print("3.Multiplication")
+    print("4.Division")
+
+    #Adding
+    def add(num1, num2):
+        return num1 + num2
+    
+    #Subtraction
+    def sub(num1, num2):
+        return num1 - num2
+    
+    #Multiplication
+    def multiply(num1, num2):
+        return num1 * num2
+    
+    #Division
+    def divide(num1,num2):
+        return num1 / num2
+    
+    while True:
+        choice = input("Choose the Operation: ")
+
+        if choice in ("1","2","3","4"):
+            try:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+            except ValueError:
+                print("Enter the valid input")
+                continue
+            if choice == "1":
+                print(num1, "+", num2, "=", add(num1,num2))
+            elif choice == "2":
+                print(num1, "-", num2, "=", sub(num1,num2))
+            if choice == "3":
+                print(num1, "*", num2, "=", multiply(num1,num2))
+            elif choice == "4":
+                print(num1, "/", num2, "=", divide(num1,num2))
+
+
+            next_calculation = input("let's do next calculation? (Yes/No): ")
+            
+            if next_calculation == "no" or "No":
+                break
+        else:
+            print("Invalid input")
+            
+main()
